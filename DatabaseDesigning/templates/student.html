@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>学生</title>
+</head>
+<body>
+<a href="{{ url_for('select_course',student_number=student_number) }}">选课</a>
+<a href="{{ url_for('get_selected_course',student_number=student_number) }}">查看选课结果</a>
+<a href="{{ url_for('delete_course',student_number=student_number) }}">注销选课</a>
+<a href="{{ url_for('logout') }}">登出</a>
+</body>
+</html>

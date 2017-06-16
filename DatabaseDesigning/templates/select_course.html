@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>选课</title>
+</head>
+<body>
+<form method="post" action="{{ url_for('select_course',student_number=student_number) }}">
+    {% for i in courses %}
+    <input type="checkbox" name="{{ i[0] }}" value="{{ i[4] }}+{{ i[6] }}">{% for j in i %}{{ j }}|{% endfor %}
+    <br>
+    {% endfor %}
+    <input type="submit">
+</form>
+{{ error }}
+</body>
+</html>

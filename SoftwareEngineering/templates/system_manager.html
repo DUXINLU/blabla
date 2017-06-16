@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>系统管理员</title>
+    <script type="text/javascript" src="{{ url_for('static',filename='alert_msg.js') }}"></script>
+</head>
+<body onload="alert_msg()">
+<form method="POST" action="{{ url_for('system_manager') }}">
+    <input type="text" name="sql">
+    <input type="submit">
+</form>
+{% for r in result %}
+{% for i in r %}
+{{ i }}
+<br>
+{% endfor %}
+{% endfor %}
+<br>
+<a href="{{ url_for('logout') }}">登出</a>
+<p id="msg">
+    {% for msg in get_flashed_messages() %}
+    {{ msg }}
+    {% endfor %}
+</p>
+</body>
+</html>

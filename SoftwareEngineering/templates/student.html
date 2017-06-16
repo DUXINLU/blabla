@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>学生</title>
+    <script type="text/javascript" src="{{ url_for('static',filename='alert_msg.js') }}"></script>
+</head>
+<body onload="alert_msg()">
+<a href="{{ url_for('select_course') }}">选课</a><br>
+<a href="{{ url_for('selected_course') }}">查询选课结果</a><br>
+<a href="{{ url_for('student_info') }}">学生信息</a><br>
+<a href="{{ url_for('logout') }}">登出</a>
+<p id="msg">
+    {% for msg in get_flashed_messages() %}
+    {{ msg }}
+    {% endfor %}
+</p>
+</body>
+</html>

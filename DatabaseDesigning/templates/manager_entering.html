@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>录入学生信息</title>
+</head>
+<body>
+<form method="post" action="{{ url_for('manager_entering') }}">
+    学号<input type="text" name="id"><br>
+    姓名<input type="text" name="name"><br>
+    籍贯<input type="text" name="note"><br>
+    状态<input type="text" name="suspend"><br>
+    注册<input type="text" name="register"><br>
+    <input type="submit" value="提交"><br>
+</form>
+<a href="{{ url_for('logout') }}">登出</a>
+</body>
+</html>

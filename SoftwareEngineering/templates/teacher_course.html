@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>教师课程：{{ course_name }}</title>
+    <script type="text/javascript" src="{{ url_for('static',filename='alert_msg.js') }}"></script>
+</head>
+<body onload="alert_msg()">
+课程信息：<br>
+<form method="post" action="{{ url_for('teacher_course',course_id=course_id) }}">
+    <input type="text" name="course_info" placeholder="{{ course_info }}">
+    <input type="submit">
+</form>
+<a href="{{ url_for('course_students',course_id=course_id) }}">本课程学生管理</a><br>
+
+<a href="{{ url_for('logout') }}">登出</a>
+<p id="msg">
+    {% for msg in get_flashed_messages() %}
+    {{ msg }}
+    {% endfor %}
+</p>
+</body>
+</body>
+</html>

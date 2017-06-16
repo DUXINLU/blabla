@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>注销选课</title>
+</head>
+<body>
+<form method="post" action="{{ url_for('delete_course',student_number=student_number) }}">
+    {% for i in courses %}
+    <input type="checkbox" name="{{ i[0] }}" value="{{ i[1] }}">{{ i[1] }}<br>
+    {% endfor %}
+    <input type="submit">
+</form>
+</body>
+</html>

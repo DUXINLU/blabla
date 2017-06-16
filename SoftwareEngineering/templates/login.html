@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>登录</title>
+    <script type="text/javascript" src="{{ url_for('static',filename='alert_msg.js') }}"></script>
+</head>
+<body onload="alert_msg()">
+<form method="post" action="{{ url_for('login') }}">
+    <input type="text" name="id">用户名<br>
+    <input type="password" name="password">密码<br>
+    <input type="radio" name="type" value="学生" checked="checked">学生<br>
+    <input type="radio" name="type" value="教师">教师<br>
+    <input type="radio" name="type" value="学院管理员">学院管理员<br>
+    <input type="radio" name="type" value="系统管理员">系统管理员<br>
+    <input type="submit">
+</form>
+<br>
+<p id="msg">
+    {% for msg in get_flashed_messages() %}
+    {{ msg }}
+    {% endfor %}
+</p>
+</body>
+</html>

@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>录入学生成绩</title>
+</head>
+<body>
+<form method="post" action="{{ url_for('manager_entering_score') }}">
+    <input type="text" name="sid">学生学号<br>
+    <input type="text" name="cid">课程号<br>
+    <input type="text" name="score">分数<br>
+    <input type="submit">
+</form>
+{{ error }}
+</body>
+</html>

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>选课</title>
+    <script type="text/javascript" src="{{ url_for('static',filename='alert_msg.js') }}"></script>
+</head>
+<body onload="alert_msg()">
+<form method="post" action="{{ url_for('select_course') }}">
+    {% for course in courses %}
+    <input type="checkbox" name="{{ course[0] }}" value="{{ course[1] }}">{{ course[1] }}&nbsp{{ course[-1] }}<br>
+    {% endfor %}
+    <input type="submit">
+</form>
+<a href="{{ url_for('logout') }}">登出</a>
+<p id="msg">
+    {% for msg in get_flashed_messages() %}
+    {{ msg }}
+    {% endfor %}
+</p>
+</body>
+</html>
